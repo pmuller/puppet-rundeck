@@ -34,6 +34,7 @@ class rundeck::params {
 
   $rdeck_base = '/var/lib/rundeck'
   $rdeck_home = '/var/lib/rundeck'
+  $rdeck_home_manage = true
   $service_logs_dir = '/var/log/rundeck'
 
   $framework_config = {
