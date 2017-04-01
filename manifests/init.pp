@@ -286,6 +286,10 @@ class rundeck (
 
   class { '::rundeck::install': } ->
   class { '::rundeck::config': } ~>
-  class { '::rundeck::service': } ->
-  Class['rundeck']
+  class { '::rundeck::service': }
+
+  contain '::rundeck::install'
+  contain '::rundeck::config'
+  contain '::rundeck::service'
+
 }
