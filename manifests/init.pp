@@ -109,6 +109,9 @@
 # [*rdeck_home*]
 #  directory under which the projects directories live.
 #
+# [*rdeck_home_manage*]
+#  Should this module manage rdeck_home?
+#
 # [*rdeck_profile_template*]
 #  Allows you to override the profile template
 #
@@ -218,6 +221,7 @@ class rundeck (
   $rd_auditlevel                = $rundeck::params::loglevel,
   $rdeck_config_template        = $rundeck::params::rdeck_config_template,
   $rdeck_home                   = $rundeck::params::rdeck_home,
+  $rdeck_home_manage            = $rundeck::params::rdeck_home_manage,
   $rdeck_profile_template       = $rundeck::params::rdeck_profile_template,
   $realm_template               = $rundeck::params::realm_template,
   $rss_enabled                  = $rundeck::params::rss_enabled,
