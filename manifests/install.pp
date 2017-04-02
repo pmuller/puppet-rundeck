@@ -112,8 +112,6 @@ class rundeck::install(
     }
   }
 
-  File[$rdeck_home] ~> File[$framework_config['framework.ssh.keypath']]
-
   if $::rundeck::rdeck_home_manage {
     file { $rdeck_home:
       ensure  => directory,
@@ -124,6 +122,10 @@ class rundeck::install(
     file { $framework_config['framework.ssh.keypath']:
       mode    => '0600',
     }
+  }
+
+  if $::rundeck::rdeck_home_manage and $::rundeck::sshkey_manage {
+    File[$rdeck_home] ~> File[$framework_config['framework.ssh.keypath']]
   }
 
   file { $rundeck::service_logs_dir:
